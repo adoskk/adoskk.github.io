@@ -1,13 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <script
-      src="https://raw.githack.com/brython-dev/brython/master/www/src/brython.js">
-    </script>
+    <script 
+		src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+	</script>
+	<script 
+		src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+	</script>
   </head>
   <body onload="brython()">
-    <script type="text/python">import browser
-    browser.alert("Hello Real Python!")
+    <script type="text/python">
+	from browser import document, alert, html
+	import math
+
+	def hello(ev):
+		alert("hello!")
+
+	document["canvas"].bind("click", hello)
+	
     </script>
+	
+	<input id="zone">
+	<button id="canvas">click</button>
   </body>
 </html>
